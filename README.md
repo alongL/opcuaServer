@@ -1,8 +1,8 @@
 # opcuaServer
 A demo opcua server to show the basic usage of open62541.
-Easy to use for everyone to adding it to your project.
+Easy to use for everyone to adding it into your project.
 
-Implentmented by open62541.  add data model and can be write by client. 
+Implentmented by open62541.  Add a sample data model and can be write by client. 
 
 
 # download open62541 and build && install
@@ -30,9 +30,13 @@ When the client modified the value of server, you callback function will be acti
 
 ![model](img/model.png)
 age height weight can be modified by opcua client.
+name and gender can not be modified by opcua client.
 
 ![value](img/value.png)
 When opcua client modified the value, opcua server will execute callback function to do some thing.
+
+The property of student is indexed by string.
+
 
 
 
