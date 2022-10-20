@@ -5,7 +5,8 @@ Easy to use for everyone to adding it into your project.
 Implentmented by open62541.  Add a sample data model and can be write by client. 
 
 
-# download open62541 and build && install
+# build and install open62541 
+
 ```
 git clone https://github.com/open62541/open62541.git
 cd open62541
