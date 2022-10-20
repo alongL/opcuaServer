@@ -26,8 +26,8 @@ type make to build program
 
 
 # usage
-you can add some code to change the value of opcua server by yourself. 
-When the client modified the value of server, you callback function will be actived.
+you can add some code to change the value of opcua server by yourself.  
+When the client modified the value of server, your callback function will be actived.
 
 ![model](img/model.png) 
 
