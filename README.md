@@ -26,14 +26,15 @@ type make to build program
 
 
 # usage
-you can add some code to change the value of opcua server by yourself.
+you can add some code to change the value of opcua server by yourself. 
 When the client modified the value of server, you callback function will be actived.
 
 ![model](img/model.png) 
-age height weight can be modified by opcua client. 
+
+age height weight can be modified by opcua client.  
 name and gender can not be modified by opcua client.
 
-![value](img/value.png)
+![value](img/value.png) 
 When opcua client modified the value, opcua server will execute callback function to do some thing.
 
 The property of student is indexed by string.
