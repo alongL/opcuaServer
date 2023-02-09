@@ -145,6 +145,24 @@ static void clientWriteCallback(UA_Server *server,
     }
 }
 
+// callback before client read
+static void beforeReadCallback(UA_Server *server,
+			const UA_NodeId *sessionId, void *sessionContext,
+			const UA_NodeId *nodeid, void *nodeContext,
+			const UA_NumericRange *range, const UA_DataValue *data) 
+{
+    if(sessionId->identifier.numeric == 1)
+        return;
+
+	//struct timespec srecvTime;
+	//clock_gettime(CLOCKID, &srecvTime);//64 bits
+        //UA_Int64 rtime64 = (UA_Int64)((srecvTime.tv_sec * SECONDS) + srecvTime.tv_nsec);
+	//printf("srecvtime: %ld.%ld \n", srecvTime.tv_sec, srecvTime.tv_nsec);//everyone 64 bits
+
+	//UA_Variant value;
+	//UA_Variant_setScalar(&value, &rtime64, &UA_TYPES[UA_TYPES_INT64]);	
+	//UA_Server_writeValue(server, *nodeid, value);
+}
 
 //this function will be called, when the value is modified by opcua client or server
  static void
@@ -153,7 +171,7 @@ static void clientWriteCallback(UA_Server *server,
          char *name = const_cast<char*>(nameStr.c_str());
          UA_NodeId currentNodeId = UA_NODEID_STRING(1, name);
          UA_ValueCallback callback;
-         callback.onRead = nullptr;
+         callback.onRead = beforeReadCallback;//nullptr
          callback.onWrite = clientWriteCallback;
          UA_Server_setVariableNode_valueCallback(server, currentNodeId, callback);
  }
